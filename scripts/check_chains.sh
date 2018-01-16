@@ -1,10 +1,8 @@
 #! /bin/bash
 
-exedir=$(dirname $(readlink -f $0))
-find_nbr=${exedir}/find_neighbor_pdb
+find_nbr=find_neighbor_pdb
 
-
-if [ ! -x ${find_nbr} ]
+if [ "$(which $find_nbr)" == "" ]
 then
   echo "Error: missing executable ${find_nbr}" 1>&2
   exit 1
